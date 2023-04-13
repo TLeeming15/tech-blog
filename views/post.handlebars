@@ -1,0 +1,13 @@
+<!-- Show only one post -->
+<h2>{{title}}</h2>
+<div>{{content}}</div>
+
+{{#if logged_in}}
+<form action="">
+    <label for="comment-text" Comment:=""></label>
+    <textarea name="" id="comment-text" cols="30" rows="10"></textarea>
+    <button type="submit">Submit comment</button>
+</form>
+{{else}}
+    <a href="/login">Login</a> to add your own comments!
+{{/if}}
