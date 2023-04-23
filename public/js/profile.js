@@ -43,3 +43,5 @@ const delButtonHandler = async (event) => {
 document
   .querySelector('.new-post-form')
   .addEventListener('submit', newFormHandler);
+
+  // TODO: Still have to attach delete function to delete button(s)

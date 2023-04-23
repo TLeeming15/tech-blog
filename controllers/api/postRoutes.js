@@ -16,6 +16,23 @@ router.post('/', withAuth, async (req, res) => {
       res.status(500).json({err:"Cannot create"})
     }
 });
+router.post('/:id/comments', withAuth, async (req, res) => {
+
+  // post_id is req.params.id
+  // user_id is req.session.user_id
+  // req.body should include content if you did fetch code right
+
+    const newComment = await Comments.create({
+      ...req.body,
+      user_id: req.session.user_id
+    });
+
+    if(newPost) {
+      res.status(200).json(newPost);
+    } else {
+      res.status(500).json({err:"Cannot create"})
+    }
+});
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {

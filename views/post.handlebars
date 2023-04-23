@@ -3,7 +3,7 @@
 <div>{{content}}</div>
 
 {{#if logged_in}}
-<form action="">
+<form id="comment-form" action="">
     <label for="comment-text" Comment:=""></label>
     <textarea name="" id="comment-text" cols="30" rows="10"></textarea>
     <button type="submit">Submit comment</button>
@@ -11,3 +11,23 @@
 {{else}}
     <a href="/login">Login</a> to add your own comments!
 {{/if}}
+
+{{#if comments.length}}
+  <div class="col-md-6 post-list">
+    <h3>Current Blog Comments:</h3>
+
+    {{#each comments as |comment|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4>{{comment.content}}</h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+
+<script src="./js/comments.js"></script>
