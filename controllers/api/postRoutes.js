@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Posts } = require('../../models');
+const { Posts, Comments } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
@@ -27,8 +27,8 @@ router.post('/:id/comments', withAuth, async (req, res) => {
       user_id: req.session.user_id
     });
 
-    if(newPost) {
-      res.status(200).json(newPost);
+    if(newComment) {
+      res.status(200).json(newComment);
     } else {
       res.status(500).json({err:"Cannot create"})
     }

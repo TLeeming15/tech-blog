@@ -3,7 +3,7 @@
 <div>{{content}}</div>
 
 {{#if logged_in}}
-<form id="comment-form" action="">
+<form id="comment-form" action="" data-id="{{id}}">
     <label for="comment-text" Comment:=""></label>
     <textarea name="" id="comment-text" cols="30" rows="10"></textarea>
     <button type="submit">Submit comment</button>
@@ -30,4 +30,4 @@
   {{/if}}
 
 
-<script src="./js/comments.js"></script>
+<script src="../js/comments.js"></script>
