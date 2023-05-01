@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.reload
       } else {
         alert('Failed to create post');
       }
@@ -25,16 +25,27 @@ const newFormHandler = async (event) => {
   
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
+      const comment_id = event.target.getAttribute('data-id');
+      
   
-      const response = await fetch(`/api/posts/${id}`, {
+      const post_id = document.querySelector('#comment-form').getAttribute('data-id');
+
+
+      const response = await fetch(`/api/posts/${post_id}/comments`, {
         method: 'DELETE',
+        body: JSON.stringify({comment_id }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        //document.location.replace('/profile');
+        //refresh
+        document.location.reload();
       } else {
-        alert('Failed to delete project');
+        alert('Failed to delete comment');
       }
     }
   };
@@ -43,4 +54,9 @@ const newFormHandler = async (event) => {
     .querySelector('#comment-form')
     .addEventListener('submit', newFormHandler);
   
-    // TODO: Delete buttons need to be attached to delete function
+  document
+    .querySelectorAll('.btn-delete')
+    .forEach(el=>{
+      el.addEventListener('click', delButtonHandler);
+    })
+    

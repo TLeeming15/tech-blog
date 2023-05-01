@@ -27,15 +27,16 @@ const newFormHandler = async (event) => {
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
+    console.log(id)
 
     const response = await fetch(`/api/posts/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.reload();
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete post');
     }
   }
 };
@@ -44,4 +45,8 @@ document
   .querySelector('.new-post-form')
   .addEventListener('submit', newFormHandler);
 
-  // TODO: Still have to attach delete function to delete button(s)
+  document
+    .querySelectorAll('.btn-delete')
+    .forEach(el=>{
+      el.addEventListener('click', delButtonHandler);
+    })

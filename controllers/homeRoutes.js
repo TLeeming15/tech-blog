@@ -51,7 +51,7 @@ router.get('/post/:id', async (req, res) => {
         },
         {
           model: Comments,
-          attributes: ['content'],
+          attributes: ['content', 'id'],
         },
       ],
     });
