@@ -55,12 +55,17 @@ Someone who is just learning coding or other aspects of the tech world can find 
 
 The following images show the completed website. You can visit here:  
 
+<img src="assets/images/landing.png" alt="Image of the landing page"/>
 
+<img src="assets/images/login.png" alt="Image of the login/signup page"/>
 
+<img src="assets/images/profile.png" alt="Image of the profile page"/>
 
-<img src="assets/images/" alt=""/>
+<img src="assets/images/post.png" alt="Image of the post page"/>
 
+<img src="assets/images/comment.png" alt="Image of the comment page"/>
 
+<img src="assets/images/comment-post.png" alt="Image of the posted comment"/>
 
 ## Installation
 
