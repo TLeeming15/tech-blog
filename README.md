@@ -53,7 +53,7 @@ Someone who is just learning coding or other aspects of the tech world can find 
 ## Usage
 
 
-The following images show the completed website. You can visit here:  
+The following images show the completed website. You can visit here:  https://technology-blogaroony.herokuapp.com/
 
 <img src="assets/images/landing.png" alt="Image of the landing page"/>
 
